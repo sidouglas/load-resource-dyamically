@@ -1,5 +1,5 @@
 {
-  "name": "load-resource-dyamically",
+  "name": "load-resource-dynamically",
   "version": "1.0.1",
   "description": "Load javascript/css as promises that dynamically appends to the document head",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sidouglas/load-resource-dyamically.git"
+    "url": "git+https://github.com/sidouglas/load-resource-dynamically.git"
   },
   "keywords": [
     "javascript",
@@ -20,7 +20,7 @@
   "author": "Simon Douglas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sidouglas/load-resource-dyamically/issues"
+    "url": "https://github.com/sidouglas/load-resource-dynamically/issues"
   },
-  "homepage": "https://github.com/sidouglas/load-resource-dyamically#readme"
+  "homepage": "https://github.com/sidouglas/load-resource-dynamically#readme"
 }
