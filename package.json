@@ -1,26 +1,32 @@
 {
   "name": "load-resource-dynamically",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Load javascript/css as promises that dynamically appends to the document head",
-  "main": "index.js",
+  "main": "distribution/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sidouglas/load-resource-dynamically.git"
-  },
-  "keywords": [
-    "javascript",
-    "promise",
-    "cssloader",
-    "jsloader",
-    "loader"
-  ],
-  "author": "Simon Douglas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sidouglas/load-resource-dynamically/issues"
-  },
-  "homepage": "https://github.com/sidouglas/load-resource-dynamically#readme"
+   "test": "echo \"Error: no test specified\" && exit 1",
+   "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
+   "prepublish": "npm run build"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/sidouglas/load-resource-dynamically.git"
+},
+"keywords": [
+  "javascript",
+  "promise",
+  "cssloader",
+  "jsloader",
+  "loader"
+],
+"author": "Simon Douglas",
+"license": "ISC",
+"bugs": {
+  "url": "https://github.com/sidouglas/load-resource-dynamically/issues"
+},
+"homepage": "https://github.com/sidouglas/load-resource-dynamically#readme",
+"devDependencies": {
+  "babel-cli": "^6.24.1",
+  "babel-preset-es2015": "^6.24.1"
+}
 }
