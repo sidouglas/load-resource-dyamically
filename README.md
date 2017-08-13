@@ -2,6 +2,23 @@
 
 Promise based ([use a polyfill if needed](https://polyfill.io/v2/docs/)) loader that takes an array of urls and loads them into the head. That's it. Automatically caches the request.
 
+
+##### Install:
+```
+npm install load-resource-dynamically --save
+
+//OR
+
+yarn add load-resource-dynamically --save
+```
+
+##### Use:
+
+```
+import loadScripts from 'load-resource-dynamically';
+import loadCss from 'load-resource-dynamically';
+```
+
 ##### Example
 
 ```
@@ -18,7 +35,7 @@ loadScripts(['/your-url/script1.js','/your-url/script1.js']).then(response => {
 ```
 (async () => {
  try {
- let result = await loadScripts(['/your-url/script1.js','/your-url/script1.js'])
+ let result = await loadCss(['/your-url/css1.css','/your-url/css2.css'])
  } catch (error){
    throw new Error('...etc...')
  }
