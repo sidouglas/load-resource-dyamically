@@ -21,6 +21,9 @@ export const loadScripts = (() => {
             script.onreadystatechange = script.onload = null
             taskRunner(scripts, loader, resolve)
           }
+
+          script.onerror = (error) => reject(error)
+
           document.body.appendChild(script)
           cache.push(src)
         }
@@ -54,6 +57,7 @@ export const loadCss = (() => {
             cache.push(url)
             taskRunner(cssFiles, loader, resolve)
           }
+          cssnode.onerror = (error) => reject(error)
           head.appendChild(cssnode)
         }
       }
