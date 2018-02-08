@@ -29,6 +29,11 @@ var loadScripts = exports.loadScripts = function () {
             script.onreadystatechange = script.onload = null;
             taskRunner(scripts, loader, resolve);
           };
+
+          script.onerror = function (error) {
+            return reject(error);
+          };
+
           document.body.appendChild(script);
           cache.push(src);
         }
@@ -61,6 +66,9 @@ var loadCss = exports.loadCss = function () {
           cssnode.onload = function () {
             cache.push(url);
             taskRunner(cssFiles, loader, resolve);
+          };
+          cssnode.onerror = function (error) {
+            return reject(error);
           };
           head.appendChild(cssnode);
         }
