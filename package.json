@@ -1,6 +1,6 @@
 {
   "name": "load-resource-dynamically",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Load javascript/css as promises that dynamically appends to the document head",
   "main": "distribution/index.js",
   "scripts": {
