@@ -60,5 +60,5 @@ const loadCssUrl = (src) => new Promise((resolve, reject) => {
   }
 });
 
-export const loadCss = (urls) => Promise.all(urls.map(loadScriptUrl));
-export const loadScripts = (urls) => Promise.all(urls.map(loadCssUrl));
+export const loadCss = (urls) => Promise.all(urls.map(loadCssUrl));
+export const loadScripts = (urls) => Promise.all(urls.map(loadScriptUrl));
