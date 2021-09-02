@@ -1,6 +1,7 @@
 # Load Resource Dynamically
 
-Promise based ([use a polyfill if needed](https://polyfill.io/v2/docs/)) loader that takes an array of urls and loads them into the head. That's it. Automatically caches the request.
+Promise based ([use a polyfill if needed](https://polyfill.io/v2/docs/)) loader that takes an array of urls and loads them into the document. 
+That's it. Automatically caches the request.
 
 
 ##### Install:
@@ -15,8 +16,7 @@ yarn add load-resource-dynamically --save
 ##### Use:
 
 ```
-import loadScripts from 'load-resource-dynamically';
-import loadCss from 'load-resource-dynamically';
+import { loadScripts, loadCss }  from 'load-resource-dynamically';
 ```
 
 ##### Example
@@ -36,6 +36,10 @@ loadScripts(['/your-url/script1.js','/your-url/script1.js']).then(response => {
 (async () => {
  try {
  let result = await loadCss(['/your-url/css1.css','/your-url/css2.css'])
+ result[0].src // contains the path of the script you just loaded, e.g. /your-url/css1.css
+ result[0].fromCache // whether or not it was from cache. (true or undefined)
+ result[1].src // /your-url/css2.css
+ result[1].fromCache // true or undefined
  } catch (error){
    throw new Error('...etc...')
  }

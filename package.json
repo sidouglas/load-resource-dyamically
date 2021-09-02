@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/sidouglas/load-resource-dynamically#readme",
   "devDependencies": {
-    "nwb": "^0.21.5"
+    "nwb": "^0.25.2"
   }
 }

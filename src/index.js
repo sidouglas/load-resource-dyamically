@@ -12,7 +12,7 @@ const loadScriptUrl = (src) => new Promise((resolve, reject) => {
 
     scriptEl.onload = scriptEl.onreadystatechange = () => {
       scriptEl.onreadystatechange = scriptEl.onload = null;
-      resolve(src);
+      resolve({ src });
       // resolve every other script that's waiting in cache
       scriptCache[src].forEach((promise) => promise(src));
       // keep a reference to the script that's loaded, so we don't load it again
@@ -23,7 +23,7 @@ const loadScriptUrl = (src) => new Promise((resolve, reject) => {
     document.body.appendChild(scriptEl);
   } else if (scriptCache[src] === true) {
     // script already been loaded from another loadUrl call, resolve it right away.
-    resolve(src);
+    resolve({ src, fromCache: true });
   } else {
     // script is still being loaded, add to cache.
     scriptCache[src].push(resolve);
@@ -43,7 +43,7 @@ const loadCssUrl = (src) => new Promise((resolve, reject) => {
 
     cssEl.onload = () => {
       cssEl.media = 'all';
-      resolve(src);
+      resolve({ src });
       // resolve every other css file that's waiting in cache
       cssCache[src].forEach((promise) => promise(src));
       // keep a reference to the css files that's loaded, so we don't load it again
@@ -53,7 +53,7 @@ const loadCssUrl = (src) => new Promise((resolve, reject) => {
     document.head.insertBefore(cssEl, document.head.firstChild);
   } else if (cssCache[src] === true) {
     // css file has already been loaded from another loadUrl call, resolve it right away.
-    resolve(src);
+    resolve({ src, fromCache: true });
   } else {
     // css file is still being loaded, add to cache.
     cssCache[src].push(resolve);
